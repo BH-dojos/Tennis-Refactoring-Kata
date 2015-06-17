@@ -89,13 +89,17 @@ class TestTennisGame(unittest.TestCase):
 class TestPlayer(unittest.TestCase):
 
     def test_points_start_with_0(self):
-        player = Player()
+        player = Player("João")
         assert player.points == 0
 
     def test_increment_points(self):
-        player = Player()
+        player = Player("João")
         player.increment_points()
         assert player.points == 1
+
+    def test_name(self):
+        player = Player("João")
+        assert player.name == "João"
 
 if __name__ == "__main__":
     unittest.main() 

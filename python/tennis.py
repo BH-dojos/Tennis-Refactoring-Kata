@@ -174,12 +174,13 @@ class TennisGame3:
 class TennisGame:
 
     def __init__(self):
-        self.player1 = Player()
-        self.player2 = Player()
+        self.player1 = Player("")
+        self.player2 = Player("")
 
 class Player:
-    def __init__(self):
+    def __init__(self, name):
         self.points = 0
+        self.name = name
 
     def increment_points(self):
         self.points += 1
