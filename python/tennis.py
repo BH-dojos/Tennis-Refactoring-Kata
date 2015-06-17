@@ -170,3 +170,10 @@ class TennisGame3:
                 return "Deuce"
             s = self.p1N if self.p1 > self.p2 else self.p2N
             return "Advantage " + s if ((self.p1-self.p2)*(self.p1-self.p2) == 1) else "Win for " + s
+
+class TennisGame:
+    def __init__(self):
+        pass    
+
+    def increment_score_player_1(self):
+        return 1
