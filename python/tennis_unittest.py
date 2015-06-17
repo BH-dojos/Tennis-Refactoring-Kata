@@ -81,10 +81,10 @@ class TestTennis(unittest.TestCase):
             self.assertEqual(score, game.score())
  
 class TestGenericTennis(unittest.TestCase):
-    def test_increments_player_score(self):
-#        score_player1 = score_player(self, player1)
+    
+    def test_check_player1_score_starts_with_zero(self):
         tennis_game = TennisGame()
-        assert tennis_game.increment_score_player_1() == 1
+        assert tennis_game.player1_score == 0
 
 if __name__ == "__main__":
     unittest.main() 
