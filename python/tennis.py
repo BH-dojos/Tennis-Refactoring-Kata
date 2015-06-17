@@ -186,4 +186,5 @@ class TennisGame:
         self.player2_score += 1
 
 class Player:
-    pass
+    def __init__(self):
+        self.score = 0
