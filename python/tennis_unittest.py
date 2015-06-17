@@ -106,9 +106,14 @@ class TestTennisGame(unittest.TestCase):
 
 class TestPlayer(unittest.TestCase):
 
-    def test_player_starts_with_score_0(self):
+    def test_score_start_with_0(self):
         player = Player()
         assert player.score == 0
+
+    def test_increment_score(self):
+        player = Player()
+        player.increment_score()
+        assert player.score == 1
 
 if __name__ == "__main__":
     unittest.main() 
