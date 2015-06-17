@@ -81,14 +81,6 @@ class TestTennis(unittest.TestCase):
             self.assertEqual(score, game.score())
  
 class TestTennisGame(unittest.TestCase):
-     
-    def test_check_player1_score_starts_with_zero(self):
-        tennis_game = TennisGame()
-        assert tennis_game.player1.score == 0
-
-    def test_check_player2_score_starts_with_zero(self):
-        tennis_game = TennisGame()
-        assert tennis_game.player2.score == 0
     
     def test_create_game_with_players(self):
         game = TennisGame()
@@ -96,14 +88,14 @@ class TestTennisGame(unittest.TestCase):
 
 class TestPlayer(unittest.TestCase):
 
-    def test_score_start_with_0(self):
+    def test_points_start_with_0(self):
         player = Player()
-        assert player.score == 0
+        assert player.points == 0
 
-    def test_increment_score(self):
+    def test_increment_points(self):
         player = Player()
-        player.increment_score()
-        assert player.score == 1
+        player.increment_points()
+        assert player.points == 1
 
 if __name__ == "__main__":
     unittest.main() 
