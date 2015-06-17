@@ -176,3 +176,6 @@ class TennisGame:
     def __init__(self):
         self.player1_score = 0
         self.player2_score = 0
+
+    def increment_player1_score(self):
+        self.player1_score += 1

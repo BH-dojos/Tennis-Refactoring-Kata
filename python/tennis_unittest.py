@@ -86,6 +86,11 @@ class TestGenericTennis(unittest.TestCase):
         tennis_game = TennisGame()
         assert tennis_game.player1_score == 0
 
+    def test_increment_player1_score(self):
+        tennis_game = TennisGame()
+        tennis_game.increment_player1_score()
+        assert tennis_game.player1_score == 1
+
     def test_check_player2_score_starts_with_zero(self):
         tennis_game = TennisGame()
         assert tennis_game.player2_score == 0
