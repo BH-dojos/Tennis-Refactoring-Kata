@@ -174,6 +174,8 @@ class TennisGame3:
 class TennisGame:
 
     def __init__(self):
+        self.player1 = Player()
+        self.player2 = Player()
         self.player1_score = 0
         self.player2_score = 0
 
@@ -182,3 +184,6 @@ class TennisGame:
 
     def increment_player2_score(self):
         self.player2_score += 1
+
+class Player:
+    pass
