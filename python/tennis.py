@@ -17,38 +17,34 @@ class Player:
 class TennisGame1:
 
     def __init__(self, player1Name, player2Name):
-        self.players = [Player(player1Name), Player(player2Name)]
-
-        self.player1Name = self.players[0].name
-        self.player2Name = self.players[1].name
-        self.p1points = 0
-        self.p2points = 0
+        self.player1 = Player(player1Name)
+        self.player2 = Player(player2Name)
         
     def won_point(self, playerName):
-        if playerName == self.player1Name:
-            self.p1points += 1
+        if playerName == self.player1.name:
+            self.player1.points += 1
         else:
-            self.p2points += 1
+            self.player2.points += 1
     
     def score(self):
         result = ""
         tempScore=0
-        if (self.p1points==self.p2points):
+        if (self.player1.points==self.player2.points):
             result = {
                 0 : "Love-All",
                 1 : "Fifteen-All",
                 2 : "Thirty-All",
-            }.get(self.p1points, "Deuce")
-        elif (self.p1points>=4 or self.p2points>=4):
-            minusResult = self.p1points-self.p2points
+            }.get(self.player1.points, "Deuce")
+        elif (self.player1.points>=4 or self.player2.points>=4):
+            minusResult = self.player1.points-self.player2.points
             if (minusResult==1):
-                result ="Advantage " + self.player1Name
+                result ="Advantage " + self.player1.name
             elif (minusResult ==-1):
-                result ="Advantage " + self.player2Name
+                result ="Advantage " + self.player2.name
             elif (minusResult>=2):
-                result = "Win for " + self.player1Name
+                result = "Win for " + self.player1.name
             else:
-                result ="Win for " + self.player2Name
+                result ="Win for " + self.player2.name
         else:
             point_as_text = {
                 0 : "Love",
@@ -57,7 +53,7 @@ class TennisGame1:
                 3 : "Forty",
             }
 
-            result = "%s-%s" % (point_as_text.get(self.p1points), point_as_text.get(self.p2points))
+            result = "%s-%s" % (point_as_text.get(self.player1.points), point_as_text.get(self.player2.points))
 
         return result
 
