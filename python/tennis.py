@@ -1,5 +1,14 @@
 # -*- coding: utf-8 -*-
 
+points_repository = {
+    0 : "Love-All",
+    1 : "Fifteen-All",
+    2 : "Thirty-All"
+}
+
+
+
+
 class TennisGame:
 
     def __init__(self):
@@ -22,19 +31,15 @@ class TennisGame1:
         
     def won_point(self, playerName):
         if playerName == self.player1.name:
-            self.player1.points += 1
+            self.player1.increment_points()
         else:
-            self.player2.points += 1
+            self.player2.increment_points()
     
     def score(self):
         result = ""
         tempScore=0
         if (self.player1.points==self.player2.points):
-            result = {
-                0 : "Love-All",
-                1 : "Fifteen-All",
-                2 : "Thirty-All",
-            }.get(self.player1.points, "Deuce")
+            result = points_repository.get(self.player1.points, "Deuce")
         elif (self.player1.points>=4 or self.player2.points>=4):
             minusResult = self.player1.points-self.player2.points
             if (minusResult==1):
