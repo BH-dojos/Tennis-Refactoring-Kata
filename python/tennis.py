@@ -1,10 +1,26 @@
 # -*- coding: utf-8 -*-
 
+class TennisGame:
+
+    def __init__(self):
+        self.player1 = Player("")
+        self.player2 = Player("")
+
+class Player:
+    def __init__(self, name):
+        self.points = 0
+        self.name = name
+
+    def increment_points(self):
+        self.points += 1
+
 class TennisGame1:
 
     def __init__(self, player1Name, player2Name):
-        self.player1Name = player1Name
-        self.player2Name = player2Name
+        self.players = [Player(player1Name), Player(player2Name)]
+
+        self.player1Name = self.players[0].name
+        self.player2Name = self.players[1].name
         self.p1points = 0
         self.p2points = 0
         
@@ -41,7 +57,7 @@ class TennisGame1:
                 3 : "Forty",
             }
 
-            result = "%s-%s" % (point_as_text[self.p1points], point_as_text[self.p2points])
+            result = "%s-%s" % (point_as_text.get(self.p1points), point_as_text.get(self.p2points))
 
         return result
 
@@ -167,18 +183,4 @@ class TennisGame3:
                 return "Deuce"
             s = self.p1N if self.p1 > self.p2 else self.p2N
             return "Advantage " + s if ((self.p1-self.p2)*(self.p1-self.p2) == 1) else "Win for " + s
-
-class TennisGame:
-
-    def __init__(self):
-        self.player1 = Player("")
-        self.player2 = Player("")
-
-class Player:
-    def __init__(self, name):
-        self.points = 0
-        self.name = name
-
-    def increment_points(self):
-        self.points += 1
 
