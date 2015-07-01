@@ -10,6 +10,7 @@ test_cases = [
     (2, 2, "Thirty-All", 'player1', 'player2'),
     (3, 3, "Deuce", 'player1', 'player2'),
     (4, 4, "Deuce", 'player1', 'player2'),
+    (16, 16, "Deuce", 'player1', 'player2'),
 
     (1, 0, "Fifteen-Love", 'player1', 'player2'),
     (0, 1, "Love-Fifteen", 'player1', 'player2'),
