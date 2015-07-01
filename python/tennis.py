@@ -6,7 +6,12 @@ points_repository = {
     2 : "Thirty-All"
 }
 
-
+point_as_text = {
+    0 : "Love",
+    1 : "Fifteen",
+    2 : "Thirty",
+    3 : "Forty",
+}
 
 
 class TennisGame:
@@ -51,13 +56,6 @@ class TennisGame1:
             else:
                 result ="Win for " + self.player2.name
         else:
-            point_as_text = {
-                0 : "Love",
-                1 : "Fifteen",
-                2 : "Thirty",
-                3 : "Forty",
-            }
-
             result = "%s-%s" % (point_as_text.get(self.player1.points), point_as_text.get(self.player2.points))
 
         return result
